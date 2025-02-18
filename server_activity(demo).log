@@ -1,0 +1,26 @@
+2025-02-17 23:28:19,852 - INFO - Server running on localhost:12345
+2025-02-17 23:28:21,763 - INFO - New connection established from ('127.0.0.1', 60024)
+2025-02-17 23:28:29,515 - INFO - Message received: simple|A man, a plan, a canal, Panama
+2025-02-17 23:28:29,515 - INFO - Response sent: Is palindrome: True
+2025-02-17 23:28:40,403 - INFO - Message received: simple|441 is cool
+2025-02-17 23:28:40,403 - INFO - Response sent: Is palindrome: False
+2025-02-17 23:28:48,954 - INFO - Message received: complex|ivicc
+2025-02-17 23:28:48,955 - INFO - Processing string: ivicc
+2025-02-17 23:28:48,955 - INFO - Palindrome achieved: icvci
+2025-02-17 23:28:48,957 - INFO - Final palindrome: icvci, Swaps: 2
+2025-02-17 23:28:48,957 - INFO - Response sent: Can form palindrome: True
+Complexity score: 2
+2025-02-17 23:28:55,011 - INFO - Message received: complex|441 is cool
+2025-02-17 23:28:55,011 - INFO - Cannot rearrange '441iscool' into a palindrome.
+2025-02-17 23:28:55,011 - INFO - Response sent: Can form palindrome: False
+Complexity score: -1
+2025-02-17 23:29:01,773 - WARNING - Server timeout: No new connections.
+2025-02-17 23:29:01,773 - INFO - Shutting down the server.
+2025-02-17 23:29:05,203 - INFO - Message received: complex|A man, a plan, a canal, Panama
+2025-02-17 23:29:05,203 - INFO - Processing string: amanaplanacanalpanama
+2025-02-17 23:29:05,203 - INFO - Palindrome achieved: amanaplanacanalpanama
+2025-02-17 23:29:05,203 - INFO - Final palindrome: amanaplanacanalpanama, Swaps: 0
+2025-02-17 23:29:05,204 - INFO - Response sent: Can form palindrome: True
+Complexity score: 0
+2025-02-17 23:29:07,483 - INFO - Client at ('127.0.0.1', 60024) disconnected.
+2025-02-17 23:29:07,483 - INFO - Connection closed for ('127.0.0.1', 60024)
