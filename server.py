@@ -10,6 +10,29 @@ logging.basicConfig(filename='server_activity.log', level=logging.INFO, format='
 SERVER_HOST = 'localhost'
 SERVER_PORT = 12345
 CONNECTION_TIMEOUT = 40
+SHIFT = 11  # Caesar Cipher Shift Value
+
+# Caesar Cipher Encryption
+def encrypt_message(message):
+    encrypted = []
+    for char in message:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            encrypted.append(chr((ord(char) - offset + SHIFT) % 26 + offset))
+        else:
+            encrypted.append(char)
+    return ''.join(encrypted)
+
+# Caesar Cipher Decryption
+def decrypt_message(message):
+    decrypted = []
+    for char in message:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            decrypted.append(chr((ord(char) - offset - SHIFT) % 26 + offset))
+        else:
+            decrypted.append(char)
+    return ''.join(decrypted)
 
 def client_handler(conn_socket, addr):
     """ Manage communication with a connected client. """
@@ -17,18 +40,21 @@ def client_handler(conn_socket, addr):
     
     try:
         while True:
-            # Receive message from client
-            message = conn_socket.recv(1024).decode()
-            if not message:
+            # Receive encrypted message from client
+            encrypted_message = conn_socket.recv(1024).decode()
+            decrypted_message = decrypt_message(encrypted_message)  # Decrypt incoming message
+            
+            if not decrypted_message:
                 logging.info(f"Client at {addr} disconnected.")
                 break
 
-            logging.info(f"Message received: {message}")
+            logging.info(f"Message received (decrypted): {decrypted_message}")
             
             # Handle the request and craft a response
-            reply = process_message(message)
-            conn_socket.send(reply.encode())
-            logging.info(f"Response sent: {reply}")
+            reply = process_message(decrypted_message)
+            encrypted_reply = encrypt_message(reply)  # Encrypt before sending
+            conn_socket.send(encrypted_reply.encode())
+            logging.info(f"Response sent (encrypted): {encrypted_reply}")
     except Exception as error:
         logging.error(f"Error with client {addr}: {error}")
     finally:

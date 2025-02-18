@@ -6,20 +6,41 @@ HOST = 'localhost'
 PORT = 12345
 CONN_TIMEOUT = 5
 MAX_RETRIES = 3
+SHIFT = 11  # Caesar Cipher Shift Value
+
+# Caesar Cipher Encryption
+def encrypt_message(message):
+    encrypted = []
+    for char in message:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            encrypted.append(chr((ord(char) - offset + SHIFT) % 26 + offset))
+        else:
+            encrypted.append(char)
+    return ''.join(encrypted)
+
+# Caesar Cipher Decryption
+def decrypt_message(message):
+    decrypted = []
+    for char in message:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            decrypted.append(chr((ord(char) - offset - SHIFT) % 26 + offset))
+        else:
+            decrypted.append(char)
+    return ''.join(decrypted)
+
 
 def initiate_client():
-    """ Initialize the client and manage connection attempts. """
     attempt_count = 0
 
     while attempt_count < MAX_RETRIES:
         try:
-            # Establish a socket connection
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
                 client.settimeout(CONN_TIMEOUT)
                 client.connect((HOST, PORT))
                 print("Successfully connected to the server.")
                 
-                # Main interaction loop with the server
                 while True:
                     user_choice = display_menu()
 
@@ -57,7 +78,6 @@ def initiate_client():
         print("Unable to connect to the server after several attempts. Exiting.")
 
 def display_menu():
-    """ Display user options and get the selection. """
     print("\nOptions Menu:")
     print("1. Basic Palindrome Check")
     print("2. Advanced Palindrome Analysis")
@@ -65,11 +85,12 @@ def display_menu():
     return input("Choose an option (1/2/3): ").strip()
 
 def transmit_message(client, message):
-    """ Send a message to the server and handle the response. """
     try:
-        client.send(message.encode())
+        encrypted_message = encrypt_message(message)  # Encrypt before sending
+        client.send(encrypted_message.encode())
         server_reply = client.recv(1024).decode()
-        print(f"Response from Server:\n{server_reply}")
+        decrypted_reply = decrypt_message(server_reply)  # Decrypt the server response
+        print(f"Response from Server:\n{decrypted_reply}")
     except socket.timeout:
         print("No response received from the server (timeout).")
 
