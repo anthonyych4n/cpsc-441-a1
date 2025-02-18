@@ -1,4 +1,4 @@
-Palindrome Checker Application
+##Palindrome Checker Application
 
 This is a client-server application to check for palindromes using two modes:
 
