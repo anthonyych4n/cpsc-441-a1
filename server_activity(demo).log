@@ -1,26 +1,54 @@
-2025-02-17 23:28:19,852 - INFO - Server running on localhost:12345
-2025-02-17 23:28:21,763 - INFO - New connection established from ('127.0.0.1', 60024)
-2025-02-17 23:28:29,515 - INFO - Message received: simple|A man, a plan, a canal, Panama
-2025-02-17 23:28:29,515 - INFO - Response sent: Is palindrome: True
-2025-02-17 23:28:40,403 - INFO - Message received: simple|441 is cool
-2025-02-17 23:28:40,403 - INFO - Response sent: Is palindrome: False
-2025-02-17 23:28:48,954 - INFO - Message received: complex|ivicc
-2025-02-17 23:28:48,955 - INFO - Processing string: ivicc
-2025-02-17 23:28:48,955 - INFO - Palindrome achieved: icvci
-2025-02-17 23:28:48,957 - INFO - Final palindrome: icvci, Swaps: 2
-2025-02-17 23:28:48,957 - INFO - Response sent: Can form palindrome: True
-Complexity score: 2
-2025-02-17 23:28:55,011 - INFO - Message received: complex|441 is cool
-2025-02-17 23:28:55,011 - INFO - Cannot rearrange '441iscool' into a palindrome.
-2025-02-17 23:28:55,011 - INFO - Response sent: Can form palindrome: False
-Complexity score: -1
-2025-02-17 23:29:01,773 - WARNING - Server timeout: No new connections.
-2025-02-17 23:29:01,773 - INFO - Shutting down the server.
-2025-02-17 23:29:05,203 - INFO - Message received: complex|A man, a plan, a canal, Panama
-2025-02-17 23:29:05,203 - INFO - Processing string: amanaplanacanalpanama
-2025-02-17 23:29:05,203 - INFO - Palindrome achieved: amanaplanacanalpanama
-2025-02-17 23:29:05,203 - INFO - Final palindrome: amanaplanacanalpanama, Swaps: 0
-2025-02-17 23:29:05,204 - INFO - Response sent: Can form palindrome: True
-Complexity score: 0
-2025-02-17 23:29:07,483 - INFO - Client at ('127.0.0.1', 60024) disconnected.
-2025-02-17 23:29:07,483 - INFO - Connection closed for ('127.0.0.1', 60024)
+2025-02-17 23:42:24,164 - INFO - Server running on localhost:12345
+2025-02-17 23:42:25,862 - INFO - New connection established from ('127.0.0.1', 60705)
+2025-02-17 23:42:34,847 - INFO - Message received (decrypted): simple|A man, a plan, a canal, Panama
+2025-02-17 23:42:34,847 - INFO - Response sent (encrypted): Td alwtyoczxp: Ecfp
+2025-02-17 23:42:38,472 - INFO - Message received (decrypted): simple|i love  441
+2025-02-17 23:42:38,472 - INFO - Response sent (encrypted): Td alwtyoczxp: Qlwdp
+2025-02-17 23:42:40,888 - INFO - Message received (decrypted): complex|A man, a plan, a canal, Panama
+2025-02-17 23:42:40,890 - INFO - Processing string: amanaplanacanalpanama
+2025-02-17 23:42:40,890 - INFO - Palindrome achieved: amanaplanacanalpanama
+2025-02-17 23:42:40,890 - INFO - Final palindrome: amanaplanacanalpanama, Swaps: 0
+2025-02-17 23:42:40,890 - INFO - Response sent (encrypted): Nly qzcx alwtyoczxp: Ecfp
+Nzxawpitej dnzcp: 0
+2025-02-17 23:42:44,824 - INFO - Message received (decrypted): complex|i  love 441
+2025-02-17 23:42:44,824 - INFO - Cannot rearrange 'ilove441' into a palindrome.
+2025-02-17 23:42:44,824 - INFO - Response sent (encrypted): Nly qzcx alwtyoczxp: Qlwdp
+Nzxawpitej dnzcp: -1
+2025-02-17 23:43:04,928 - INFO - Message received (decrypted): complex|ivicc
+2025-02-17 23:43:04,928 - INFO - Processing string: ivicc
+2025-02-17 23:43:04,928 - INFO - Palindrome achieved: icvci
+2025-02-17 23:43:04,928 - INFO - Final palindrome: icvci, Swaps: 2
+2025-02-17 23:43:04,928 - INFO - Response sent (encrypted): Nly qzcx alwtyoczxp: Ecfp
+Nzxawpitej dnzcp: 2
+2025-02-17 23:43:05,868 - WARNING - Server timeout: No new connections.
+2025-02-17 23:43:05,868 - INFO - Shutting down the server.
+2025-02-17 23:43:06,864 - INFO - Client at ('127.0.0.1', 60705) disconnected.
+2025-02-17 23:43:06,864 - INFO - Connection closed for ('127.0.0.1', 60705)
+2025-02-17 23:43:39,000 - INFO - Server running on localhost:12345
+2025-02-17 23:43:40,767 - INFO - New connection established from ('127.0.0.1', 60762)
+2025-02-17 23:43:48,720 - INFO - Message received (decrypted): simple|A man, a plan, a canal, Panama
+2025-02-17 23:43:48,720 - INFO - Response sent (encrypted): Td alwtyoczxp: Ecfp
+2025-02-17 23:43:51,256 - INFO - Message received (decrypted): simple|yes
+2025-02-17 23:43:51,256 - INFO - Response sent (encrypted): Td alwtyoczxp: Qlwdp
+2025-02-17 23:43:54,248 - INFO - Message received (decrypted): simple|i  love 441
+2025-02-17 23:43:54,248 - INFO - Response sent (encrypted): Td alwtyoczxp: Qlwdp
+2025-02-17 23:43:56,784 - INFO - Message received (decrypted): complex|A man, a plan, a canal, Panama
+2025-02-17 23:43:56,784 - INFO - Processing string: amanaplanacanalpanama
+2025-02-17 23:43:56,784 - INFO - Palindrome achieved: amanaplanacanalpanama
+2025-02-17 23:43:56,784 - INFO - Final palindrome: amanaplanacanalpanama, Swaps: 0
+2025-02-17 23:43:56,784 - INFO - Response sent (encrypted): Nly qzcx alwtyoczxp: Ecfp
+Nzxawpitej dnzcp: 0
+2025-02-17 23:44:00,144 - INFO - Message received (decrypted): complex|i  love 441
+2025-02-17 23:44:00,145 - INFO - Cannot rearrange 'ilove441' into a palindrome.
+2025-02-17 23:44:00,145 - INFO - Response sent (encrypted): Nly qzcx alwtyoczxp: Qlwdp
+Nzxawpitej dnzcp: -1
+2025-02-17 23:44:05,656 - INFO - Message received (decrypted): complex|ivicc
+2025-02-17 23:44:05,656 - INFO - Processing string: ivicc
+2025-02-17 23:44:05,656 - INFO - Palindrome achieved: icvci
+2025-02-17 23:44:05,656 - INFO - Final palindrome: icvci, Swaps: 2
+2025-02-17 23:44:05,656 - INFO - Response sent (encrypted): Nly qzcx alwtyoczxp: Ecfp
+Nzxawpitej dnzcp: 2
+2025-02-17 23:44:10,568 - INFO - Client at ('127.0.0.1', 60762) disconnected.
+2025-02-17 23:44:10,568 - INFO - Connection closed for ('127.0.0.1', 60762)
+2025-02-17 23:44:20,779 - WARNING - Server timeout: No new connections.
+2025-02-17 23:44:20,779 - INFO - Shutting down the server.
